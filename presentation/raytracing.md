@@ -51,10 +51,10 @@ output: raytracing.html
 
 ### Surfaces
 
+* Defined Intersection Equation
 * Material
   * Color
   * Reflective / Refractive Properties
-* Defined Intersection Equation
 
 --
 
@@ -117,9 +117,9 @@ output: raytracing.html
 
 ### Whitted Continued
 
-* Inspired by Lambertian & Phong models
-  * Adds reflection to more accurately capture specular highlights
-  * Adds refraction to represent additional effects
+![Whitted Equation](whitted_equation.png)
+
+[from the paper]
 
 --
 
@@ -140,3 +140,7 @@ output: raytracing.html
 * [Original Whitted Paper (PDF)](https://www.cs.drexel.edu/~david/Classes/CS586/Papers/p343-whitted.pdf)
 * [Ray Tracing in One Weekend](https://raytracing.github.io/)
 * [Graphics & Visualization Book](http://graphics.cs.aueb.gr/cgvizbook/index.html)
+
+--
+
+## Questions?
