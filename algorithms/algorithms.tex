@@ -1,0 +1,119 @@
+\documentclass{article}
+
+\begin{document}
+\section{Ray-Sphere Intersection}
+
+\paragraph{}
+Equation of a Line: \(x = o + d l \)
+
+\begin{itemize}
+\item \(x\): a point along the line
+\item \(o\): the origin point of the line
+\item \(d\): the distance along the line
+\item \(l\): the direction vector of the line (normalized)
+\end{itemize}
+
+\paragraph{}
+Equation of a Sphere: \(\|x - c\|^2 =r^2\)
+
+\begin{itemize}
+\item \(x\): a point on the sphere
+\item \(c\): the center point on the sphere
+\item \(r\): the radius of the sphere
+\end{itemize}
+
+
+\paragraph{}
+Math Occurs
+
+\[d = -(l \cdot (o - c)) \pm \sqrt{(l \cdot (o - c))^2 - (\|o - c\|^2 - r^2)}\]
+
+Notes:
+
+\begin{itemize}
+\item For rays, all intersections must be \(d \geq 0\) since anything outside of
+  that is outside of the ray.
+\item If the term inside the square root is negative, the line does not
+  intersect the sphere.
+\item If the term is zero, there is exactly a single intersection. Otherwise,
+  there are two.
+\end{itemize}
+
+\section{Ray-Plane Intersection}
+
+Equation of a Line: \(x = o + d l \)
+
+\begin{itemize}
+\item \(x\): a point along the line
+\item \(o\): the origin point of the line
+\item \(d\): the distance along the line
+\item \(l\): the direction vector of the line (normalized)
+\end{itemize}
+
+\paragraph{}
+Equation of a Plane: \((p - p_0) \cdot n = 0\)
+
+\begin{itemize}
+\item \(p\): a point on the plane
+\item \(p_0\): the origin point of the plane
+\item \(n\): the surface normal of the plane
+\end{itemize}
+
+\paragraph{}
+
+Math Occurs
+
+\[d = \frac{(p_0 - o) \cdot n}{l \cdot n}\]
+
+Notes:
+
+\begin{itemize}
+\item For rays, all intersections must be \(d \geq 0\) since anything outside of
+  that is outside of the ray.
+\item If \(l \cdot n = 0\), the line is parallel to the plane.
+\end{itemize}
+
+\section{Lambertian Light}
+
+\[I_d = l \cdot n C I_l\]
+
+\begin{itemize}
+\item \(I_d\): the intensity of diffuse light
+\item \(l\): the vector toward the light from the point of intersection
+  (normalized)
+\item \(n\): the surface normal at the point of intersection
+\item \(C\): the color of the surface
+\item \(I_l\): the intensity of the light
+\end{itemize}
+
+\section{Whitted Model}
+
+\[I = I_a + k_d\displaystyle\sum_{j=0}^{lights} (n \cdot l_j) + k_s S + k_t T\]
+
+\begin{itemize}
+\item \(I\): the intensity of light in the Whitted model
+\item \(I_a\): the intensity of ambient light (constant in the scene)
+\item \(k_d\): the diffuse coefficient
+\item \(n\): the surface normal at the point of intersection
+\item \(l_j\): the vector from the point of intersection to the light
+  (normalized)
+\item \(k_s\): the specular coefficient
+\item \(S\): the intensity of reflected light 
+\item \(k_t\): the transmission coefficient
+\item \(T\): the intensity of refracted light
+\end{itemize}
+
+\section{Reflection}
+
+\paragraph{}
+Equation for a vector that is the component of the surface normal that is
+perpendicular to the normal direction: \(perp_nl = l - (n \cdot l)n\)
+
+\[R = 2(n \cdot l)n - l\]
+
+\paragraph{}
+This is much easier to explain via a diagram. Mathematics for 3D Game
+Programming \& Computer Graphics contains an easy-to-follow diagram and
+explanation on page 152-153.
+
+\end{document}
